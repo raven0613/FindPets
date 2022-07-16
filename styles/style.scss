@@ -1,0 +1,227 @@
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.find-pet-form{
+  padding: 0.5rem;
+  
+  .photo{
+    display: flex;
+    flex-direction: column;
+    .photo-upload {
+      width: 50vw;
+      padding: 2rem;
+      border: 0.5rem solid rgb(191, 229, 238);
+      text-align: center;
+    }
+    
+    #photo-input {
+      visibility: hidden;
+    }
+    .show-photo{
+      background-color: rgb(172, 224, 207);
+      width: 50vw;
+      height: 30vh;
+
+      .photo-preview{
+        width: 10rem;
+        height: 10rem;
+        object-fit: cover;
+      }
+    }
+  }
+
+}
+body{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .card-container {
+    position: relative;
+    z-index: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 80%;
+
+    .display-card {
+      width: 20rem;
+      height: 30rem;
+      background-color: rgb(223, 240, 253);
+      margin: 0.5rem;
+
+
+      .card-info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .avatar{
+
+          width: 80%;
+          height: 16rem;
+          border: 0.1rem solid rgb(131, 202, 230);
+          .card-avatar {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            cursor: pointer;
+          }
+        }
+
+      }
+
+    }
+  }
+
+  .modal{
+    width:80vw;
+    height: 80vh;
+    background-color: rgb(251, 254, 255);
+    position: fixed;
+    z-index: 1;
+    top: 5rem;
+    box-shadow: 0 0 20px 5px  rgb(194, 217, 221);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    
+    .info{
+      width: 25%;
+      height: 80%;
+      img {
+        width: 90%;
+        height: auto;
+      }
+    }
+      
+    .show-image{
+      width: 60%;
+      height: 100%;
+      p{
+        font-size: 1.2rem;
+        text-align: center;
+      }
+      .image-frame{
+        width: 100%;
+        height: 95%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+          object-fit: cover;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    .album{
+      border: 1px solid rgb(196, 195, 195);
+
+      width: 15%;
+      height: 90%;
+      overflow: hidden;
+      img{
+        width: 100%;
+        height: auto;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .modal-hidden{
+    display: none;
+  }
+}
+
+@media screen and (max-width:1700px) {
+  body {
+    .card-container {
+      width: 90%;
+    }
+  }
+}
+
+@media screen and (max-width:1550px) {
+  body {
+    .card-container {
+      width: 95%;
+    }
+  }
+}
+@media screen and (max-width:1450px) {
+  body {
+    .card-container {
+      width: 60%;
+    }
+  }
+}
+@media screen and (max-width:1150px) {
+  body {
+    .card-container {
+      width: 80%;
+    }
+  }
+}
+@media screen and (max-width:920px) {
+  body {
+    .card-container {
+      width: 90%;
+    }
+  }
+}
+
+
+@media screen and (max-width:800px) {
+  body{
+    .card-container {
+        width: 95%;
+
+      }
+    .modal {
+      flex-direction: column;
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+      width: 90vh;
+      height: 90vh;
+      overflow: scroll;
+
+      .info {
+          width: 90%;
+          height: 80%;
+      
+          img {
+            width: 90%;
+            height: auto;
+          }
+        }
+      .show-image{
+        display: none;
+      }
+      .album {
+        width: 90%;
+        height: 90%;
+        overflow: visible;
+
+        img {
+          width: 100%;
+          height: auto;
+          cursor: none;
+          pointer-events: none;
+        }
+      }
+
+    }
+  }
+
+}

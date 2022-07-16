@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find Pets</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/findPets/styles/style.css">
+</head>
+
+<body> 
+
+  <div action="" class="find-pet-form">
+    <div class="avatar">
+    </div>
+    <label for="owner-name">Owner Name</label>
+    <input type="text" placeholder="Name" id="owner-name" name="owner-name" required>
+    <label>*</label>
+    <br>
+
+    <div class="contact">
+      <label for="contact-information">Contact Information</label>
+      <br>
+      <input list="contact-types" name="contact-type" id="contact-type" placeholder="contact type">
+      <datalist id="contact-types">
+        <option value="email">
+        <option value="mobile">
+        <option value="line">
+        <option value="facebook">
+        <option value="some-others">
+      </datalist>
+        <input type="text" placeholder="id / phone / address ..." id="contact-input" name="id-phone" required>
+        <button class="add-contact">+</button>
+        <label>*</label>
+    </div>
+
+    <label for="petName">Pet Name</label>
+    <input type="text" placeholder="Name" id="pet-name" name="pet-name" required>
+    <label>*</label>
+
+    <br>  
+
+    <label>Pet Type</label>
+      <input list="pet-types" name="pet-type" id="pet-type">
+      <datalist id="pet-types">
+        <option value="dog">
+        <option value="cat">
+        <option value="bird">
+        <option value="reptile">
+        <option value="others">
+      </datalist>
+    <br>
+
+    <div class="gender">
+      <label>Pet Gender</label>
+      <input type="radio" class="gender-radio checked" name="gender" value="male" checked>
+      <label for="male">male</label>
+      
+      <input type="radio" class="gender-radio" name="gender" value="female">
+      <label for="female">female</label>
+      
+      <input type="radio" class="gender-radio" name="gender" value="not-sure">
+      <label for="not-sure">not sure</label>
+    </div>
+
+    <div class="locations">
+      <label for="lost-location">Lost Location:</label>
+      <input list="locations" name="lost-location" id="lost-location">
+      <datalist id="locations">
+        <option value="Taipei">
+        <option value="New Taipei">
+        <option value="Taoyuan">
+        <option value="Hsinchu">
+        <option value="Miaoli">
+      </datalist>
+    </div>
+
+
+    <div class="photo">
+      <label for="photo-input" class="photo-upload">Upload photos</label>
+      <input type="file" id="photo-input" accept="image/gif, image/jpeg, image/png" multiple>
+
+      <div class="show-photo">
+        
+      </div>
+    </div>
+
+    <button type="submit" id="submit">submit</button>
+    <button type="reset">clear</button>
+  </div>
+
+
+  <div class="card-container">
+    <div class="display-card">
+      <div class="card-info">
+        <div class="avatar">
+          <img class="card-avatar" data-id="${item.id}" src="/findPets/images/20.png" alt="card-avatar">
+        </div>
+        <p>Contact Person</p>
+        <p>Contact Information</p>
+        <p>Pet Name</p>
+        <p>Pet Type</p>
+        <p>Pet Gender</p>
+        <p>Lost Location</p>
+      </div>
+      <div class="card-btn">
+        <button>edit</button>
+        <button>delete</button>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal modal-hidden">
+
+    <div class="info">
+      <img class="card-avatar" src="/findPets/images/20.png" alt="card-avatar">
+      <p>Contact Person</p>
+      <p>Contact Information</p>
+      <p>Pet Name</p>
+      <p>Pet Type</p>
+      <p>Pet Gender</p>
+      <p>Lost Location</p>
+    </div>
+
+    <div class="show-image">
+      <div class="image-frame">
+        <img src="/findPets/images/photo.png" alt="">    
+      </div>
+      <p>my pet is so cute.</p>
+    </div>
+
+    <div class="album">
+
+    </div>
+  </div>
+
+  <script src="/findPets/scripts/main.js"></script>
+</body>
+
+</html>
